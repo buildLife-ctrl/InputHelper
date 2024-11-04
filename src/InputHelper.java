@@ -1,10 +1,22 @@
 import com.sun.org.apache.xerces.internal.xs.StringList;
-
 import java.util.Scanner;
 
 public class InputHelper {
-    public static void getNonZeroLenString() {
+    public static String getNonZeroLenString(Scanner scan, String prompt) {
+        String input;
+        boolean check = false;
 
+        System.out.println(prompt);
+        do {
+            input = scan.nextLine();
+            if (input.length() != 0) {
+                check = true;
+            } else {
+                System.out.println("You have to enter something, try again.");
+            }
+        } while (!check);
+
+        return input;
     }
 
     //prompts the user for input until valid input is received
@@ -78,11 +90,24 @@ public class InputHelper {
         System.out.println(prompt);
         do {
             input = scan.nextLine();
-            if (prompt.matches()) {
+            if (input.matches(regExPattern)) {
+                check = true;
             } else {
-                System.out.println("");
+                System.out.println("Invalid input, please try again.");
             }
-            scan.nextLine();
+        } while (!check);
+
+        return input;
+    }
+
+    public static double getDouble(Scanner scan, String prompt) {
+        double input;
+        boolean check = false;
+
+        System.out.println(prompt);
+        do {
+            input = scan.nextLine();
+            if
         } while (!check);
     }
 }
