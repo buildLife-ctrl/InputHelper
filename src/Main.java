@@ -17,6 +17,8 @@ public class Main {
         String z = InputHelper.getNonZeroLenString(scan, "Please enter something random:");
         System.out.println("You entered: " + z);
          */
-        //Testing getDouble
+        //Testing getYNConfirm
+        boolean a = InputHelper.getYNConfirm(scan, "Do you like dogs?");
+        System.out.println("Your answer is " + a);
     }
 }
